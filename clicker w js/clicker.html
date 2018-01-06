@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    
+        <meta charset="utf-8"/>
+        <title>Clicker w JS</title>
+        
+    <style>
+		body
+		{
+			color: white;
+			font-family: Lato;
+			background-color: #303030;
+		}
+		
+		#ALL
+		{
+			margin-left: auto;
+			margin-right: auto;
+			padding: 20px;
+			width: 80%;
+		}
+		
+		.strona
+		{
+			float: left;
+			width: 40%;
+		}
+        
+        #GameLog
+        {
+            margin-top: 30px;
+            border: 2px solid white;
+            height: 35vh;
+            text-align: center;
+            width: 170px;
+        }
+        
+	</style>
+        
+        <script>
+            
+            var Money = 0;
+            var SklepNumber = 0;
+            var SklepCost = 10;
+            var SklepPower = 0;
+            var SklepUpgradeNumber = 0;
+            var KioskNumber = 0;
+            var KioskCost = 1000;
+            var KioskPower = 0;
+            
+            function AddMoney(numer)
+            {
+                Money = Money + numer;
+                document.getElementById("MoneyCount").innerHTML = Money;
+            }
+            
+            function BuySklep()
+            {
+                if(Money >= SklepCost)
+                    {
+                        SklepNumber++;
+                        SklepPower++;
+                        SklepCost++;
+                        Money = Money - SklepCost;
+                        document.getElementById("SklepNumber").innerHTML = SklepNumber;
+                        document.getElementById("MoneyCount").innerHTML = Money;
+                        document.getElementById("SklepCost").innerHTML = SklepCost;
+                    }
+            }
+            
+            function save()
+            {
+                var Save = {
+                    Money: Money, SklepCost: SklepCost, SklepNumber: SklepNumber, SklepPower: SklepPower, 
+                    SklepUpgradeNumber: SklepUpgradeNumber, KioskCost: KioskCost, KioskNumber: KioskNumber, 
+                    KioskPower: KioskPower
+                }
+                
+                localStorage.setItem("Saved", JSON.stringify(Save));
+            }
+            
+            function load()
+            {
+                var SaveGame = JSON.parse(localStorage.getItem("Saved"));
+                
+                if(typeof SaveGame.Money != "undefined") Money = SaveGame.Money;
+                if(typeof SaveGame.SklepCost != "undefined") SklepCost = SaveGame.SklepCost;
+                if(typeof SaveGame.SklepNumber != "undefined") SklepNumber = SaveGame.SklepNumber;
+                if(typeof SaveGame.SklepPower != "undefined") SklepPower = SaveGame.SklepPower;
+                if(typeof SaveGame.KioskCost != "undefined") KioskCost = SaveGame.KioskCost;
+                if(typeof SaveGame.KioskNumber != "undefined") KioskNumber = SaveGame.KioskNumber;
+                if(typeof SaveGame.KioskPower != "undefined") KioskPower = SaveGame.KioskPower;
+                if(typeof SaveGame.SklepUpgradeNumber != "undefined") SklepUpgradeNumber = SaveGame.SklepUpgradeNumber;
+                document.getElementById("MoneyCount").innerHTML = Money;
+                document.getElementById("SklepCost").innerHTML = SklepCost;
+                document.getElementById("SklepNumber").innerHTML = SklepNumber;
+                document.getElementById("KioskCost").innerHTML = KioskCost;
+                document.getElementById("KioskNumber").innerHTML = KioskNumber;
+            }
+            
+            function reset()
+            {
+                localStorage.clear();  // lub window.localStorage.clear()
+                location.reload();
+            }
+            
+            function start()
+            {
+                load();
+                UpChecker();
+            }
+            
+            window.setInterval(function(){  // co jaki czas ma się wywoływać funkcja
+                if(SklepNumber >= 1)
+                    {
+                      AddMoney(SklepPower);
+                    }
+                if(KioskNumber >= 1)
+                    {
+                        AddMoney(KioskPower);
+                    }
+            }, 1000);
+            
+            function SklepUpgrade(number)
+            {
+                if((Money >= 10 * SklepCost) && (SklepNumber >= 10) && number == 1)
+                    {
+                        Money = Money - 10 * SklepCost;
+                        SklepPower = SklepPower * 2;
+                        SklepUpgradeNumber++;
+                        document.getElementById("MoneyCount").innerHTML = Money;
+                        
+                        document.getElementById("SklepUp1").style.display = "none";
+                        document.getElementById("SklepUp1D").style.display = "inline";
+                    }
+                else
+                    {
+                        document.getElementById("LogText").innerHTML = "You need 100$ and 10 sklep!";
+                        
+                        setTimeout(function(){
+                            document.getElementById("LogText").innerHTML = "";
+                        }, 3000);
+                    }
+                
+                if((Money >= SklepCost * 20) && (SklepNumber >= 20) && (number ==2) && (SklepUpgradeNumber >= 1))
+                {
+                        Money = Money - 20 * SklepCost;
+                        SklepPower = SklepPower * 2;
+                        SklepUpgradeNumber++;
+                        document.getElementById("MoneyCount").innerHTML = Money;
+                        
+                        document.getElementById("SklepUp2").style.display = "none";
+                        document.getElementById("SklepUp2D").style.display = "inline";
+                }
+                else
+                {
+                     document.getElementById("LogText").innerHTML = "You need 1000$, 20 sklep and first up!";
+                        
+                      setTimeout(function(){
+                           document.getElementById("LogText").innerHTML = "";
+                      }, 3000);
+                 }
+            }
+            
+            function UpChecker()
+            {
+                if(SklepUpgradeNumber == 1)
+                    {
+                        document.getElementById("SklepUp1").style.display = "none";
+                        document.getElementById("SklepUp1D").style.display = "inline";
+                    }
+                if(SklepUpgradeNumber == 2)
+                    {
+                        document.getElementById("SklepUp2").style.display = "none";
+                        document.getElementById("SklepUp2D").style.display = "inline";
+                    }
+            }
+            
+            function BuyKiosk()
+            {
+                if(Money >= KioskCost)
+                    {
+                        Money = Money - KioskCost;
+                        KioskNumber++;
+                        KioskCost = KioskCost + 100;
+                        KioskPower = KioskPower + 10;
+                        document.getElementById("MoneyCount").innerHTML = Money;                  
+                        document.getElementById("KioskNumber").innerHTML = KioskNumber;                  
+                        document.getElementById("KioskCost").innerHTML = KioskCost;                  
+                    }
+            }
+            
+            function goFAQ()
+            {
+                document.getElementById("ALL").style.display = "none";
+                document.getElementById("FAQ").style.display = "inline";
+            }
+            
+            function goGame()
+            {
+                document.getElementById("FAQ").style.display = "none";
+                document.getElementById("ALL").style.display = "block";
+            }
+            
+            function goFAQ2()
+            {
+                document.getElementById("FAQ2").style.display = "inline";
+            }
+            
+            function goGame2()
+            {
+                document.getElementById("FAQ2").style.display = "none";
+            }
+        
+        </script>
+        
+    </head>
+    
+    <body onload="start()">
+        
+        <div id="ALL">
+            
+            <div class="strona">
+                
+                $ <span id="MoneyCount">0</span> <br/><br/>
+                <button onclick="AddMoney(1)" class="Butt" type="button">+1</button>
+                <button onclick="AddMoney(10)" class="Butt" type="button">+10</button>
+                <button onclick="AddMoney(100)" class="Butt" type="button">+100</button>
+                <button onclick="AddMoney(1000000000)" class="Butt" type="button">+duzo</button><br/>
+                <button onclick="goFAQ()" class="Butt" type="button" style="margin-top: 5px;">go to FAQ</button>
+                <button onclick="goFAQ2()" class="Butt" type="button" style="margin-top: 5px;">go to FAQ2</button>
+                
+                
+                <div id="GameLog">
+                    
+                    GAME LOG <br/><br/> 
+                    
+                    <img src="img/knight.jpg" style="width: 87%; height: 70%;"/><br/>
+                    
+                    *<span id="LogText"></span>
+                
+                </div>
+            
+            </div>
+            
+            <div class="strona">
+                
+                <div id="Sklep" style="line-height: 23px;">
+                    
+                    <button onclick="save()" class="Butt" type="button">save</button>
+                    <button onclick="load()" class="Butt" type="button">load</button>
+                    <button onclick="reset()" class="Butt" type="button">reset</button> <br/>
+                    Sklep <br/>
+                    You have: <span id="SklepNumber">0</span> <br/>
+                    Cost: <span id="SklepCost">10</span> <br/>
+                    <button onclick="BuySklep()" class="Butt" type="button">Buy!</button> <br/>
+                    
+                    <button onclick="SklepUpgrade(1)" id="SklepUp1" class="Butt" type="button">10 sklep</button>
+                    <button style="display: none;" disabled="true" id="SklepUp1D" class="Butt" type="button">10 sklep</button>
+                    
+                    <button onclick="SklepUpgrade(2)" id="SklepUp2" class="Butt" type="button">20 sklep</button>
+                    <button style="display: none;" disabled="true" id="SklepUp2D" class="Butt" type="button">20 sklep</button>
+                
+                </div>
+                
+                <div id="Kiosk" style="margin-top: 10px; line-height: 23px;">
+                    
+                    Kiosk <br/>
+                    You have: <span id="KioskNumber">0</span> <br/>
+                    Cost: <span id="KioskCost">1000</span> <br/>
+                    <button onclick="BuyKiosk()" class="Butt" type="button">Buy!</button> <br/>
+                
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <div id="FAQ" style="display: none;">
+            <button onclick="goGame()">Back to game</button>
+
+            <div style="font-size: 30px; padding: 5px; border-bottom: 2px dotted white;">1. Gra jest darmowa</div><br />
+            <span>Możesz ją kopiować, przepisywać lub uczyć się z kodu na tej stronie, więc rób z tym co chesz! :D</span>
+
+            <br /><br /><br />
+            <div style="font-size: 30px; padding: 5px; border-bottom: 2px dotted white;">2. Używam JavaScriptu</div><br />
+            <span> Więc nie ma tu takich rzeczy jak jQuery lub innych rozszerzeń i dodatkowych bibliotek</span>
+	   </div>
+	
+        <div id="FAQ2" style="display: none; position: absolute; top: 5%; background-color: #404040;">
+            <button onclick="goGame2()">back to game</button>
+
+            <div style="font-size: 30px; padding: 5px; border-bottom: 2px dotted white;">1. Gra jest darmowa</div><br />
+            <span>Możesz ją kopiować, przepisywać lub uczyć się z kodu na tej stronie, więc rób z tym co chesz! :D</span>
+
+            <br /><br /><br />
+            <div style="font-size: 30px; padding: 5px; border-bottom: 2px dotted white;">2. Używam JavaScriptu</div><br />
+            <span> Więc nie ma tu takich rzeczy jak jQuery lub innych rozszerzeń i dodatkowych bibliotek</span>
+        </div>
+    
+    </body>
+
+
+</html>

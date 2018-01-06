@@ -1,0 +1,473 @@
+body
+{
+margin: 0 !important;
+padding: 0px;
+font-size: 16px;
+}
+
+header
+{
+height: 100vh;
+width: 100%;
+display: block;
+background-image: url(https://cdn.pixabay.com/photo/2017/08/20/10/22/bokeh-2661179_960_720.jpg);
+background-position: center;
+background-size: cover;
+opacity: 0.95;
+}
+
+nav
+{
+height: 50px;
+border-bottom: 1.3px solid white;
+display: block;
+float: left;
+width: 100%;
+/*position: fixed; */ /* menu bêdzie przyklejane do górnej krawêdzi */
+/*top: 0px; */
+/*z-index: 100; */ /* bêdzie zas³aniaæ pozosta³e rzeczy, które s¹ za menu */
+}
+
+#logo
+{
+float: left;
+color: white;
+font-size: 22px;
+display: block;
+height: 100%;
+width: 300px;;
+}
+
+#ikona
+{
+display: block;
+height: 100%;
+float: left;
+margin-top: 2px;
+margin-left: 30px;
+}
+
+#napis
+{
+display: block;
+float: left;
+height: 100%;
+line-height: 15px;
+margin-left: 10px;
+font-family: Helvetica;
+letter-spacing: 2px;
+}
+
+#ikona-git
+{
+display: block;
+height: 50px;
+float: right;
+padding-bottom: 0px;
+margin-top: 0px;
+}
+
+#menu 
+{
+display: block;
+height: 100%;
+width: 100%;
+}
+
+#ikona-git
+{
+display: block;
+float: right;
+margin-right: 30px;
+}
+
+#ikona-git a
+{
+
+color: white;
+}
+
+#lista
+{
+display: block;
+float: right;
+height: 100%;
+}
+
+#lista ul
+{
+display: block;
+float: right;
+height: 100%;
+width: 606px;
+margin-right: 30px;
+}
+
+#lista ul li
+{
+font-family: Helvetica;
+font-size: 21px;
+display: block;
+float: right;
+width: 190px;
+letter-spacing: 1.2px;
+text-align: center;
+margin-top: 2px;
+}
+
+#lista ul li a
+{
+text-decoration: none;
+color: white;
+}
+
+#lista ul li a:hover
+{
+color: #FFFB00;
+cursor: pointer;
+font-weight: 500;
+}
+
+#opis1
+{
+float: left;
+display: block;
+width: 100%;
+}
+
+#naglowek1
+{
+display: block;
+width: 400px;
+height: 90px;
+margin-left: auto;
+margin-right: auto;
+text-align:center;
+margin-top: 60px;
+}
+
+#naglowek1 h2
+{
+font-size: 38px;
+letter-spacing: 2px;
+font-weight: 700;
+font-family: 'Roboto', sans-serif;
+color: #0DF73F;
+margin-bottom: 0px;
+}
+
+#naglowek1 p
+{
+color: #00EEFA;
+font-size: 21px;
+margin: 0px;
+padding-top: 0px;
+text-align: center;
+}
+
+#tresc1
+{
+display: block;
+width: 600px;
+color: white;
+font-size: 19px;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+background-color: #030303;
+opacity: 0.87;
+padding: 10px;
+line-height: 30px;
+}
+
+#strzalka
+{
+float: left;
+display: block;
+margin-top: 180px;
+width: 100%;
+text-align: center;
+}
+
+#strzalka a
+{
+color: #bbbbbb;
+}
+
+#strzalka a:hover
+{
+color: #FFFB00;   
+}
+
+article
+{
+display: block;
+float: left;
+width: 100%;
+}
+
+#strona2
+{
+display: block;
+float: left;
+height: 100vh;
+width: 100%;
+background-image: url(https://cdn.pixabay.com/photo/2017/03/23/17/02/night-2168868_960_720.png);
+background-position: center;
+background-size: contain;
+}
+
+.naglowek
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-bottom: 1.2px solid yellow;
+height: 50px;
+width: 350px;;
+text-align: center;
+padding: 0px;
+line-height: 65px;
+}
+
+.naglowek h2
+{
+color: white;
+font-size: 30px;
+font-family: Roboto;
+letter-spacing: 2px;
+}
+
+#image1
+{
+display: block;
+height: 190px;
+width: 450px;             
+float: left;
+background-image: url(https://kursphp.com/wp-content/uploads/2014/11/czysty-kod-dobre-praktyki-programowania.jpg);
+background-position: center;
+background-size: contain;
+margin-top: 70px;
+border: 2px solid black;
+margin-left: 25px;
+}
+
+#image2
+{
+height: 200px;
+width: 350px;
+border: 2px solid #000026;
+background-image: url(https://pace.oregonstate.edu/sites/default/files/styles/course_banner_large/public/images/course/cover/pace-oregon-state-html-css-coding-web-design.jpg?itok=tNEZncCn); 
+background-position: center;
+background-size: contain;
+margin-top: 290px;
+margin-left: 75px;
+}
+
+#opis2
+{
+display: block;
+float: left;
+min-height: 40px;
+width: 215px;
+margin-top: 110px;
+margin-left: 35px;
+font-size: 21px;
+color: white;
+line-height: 25px;
+border-right: 1.4px solid #3DD167;
+padding-top: 0px;
+}
+
+#opis2 p
+{
+margin-top: 0px;
+margin-bottom: 5px;
+padding: 0px;
+}
+
+#tresc2
+{
+padding-top: 0px;
+display: block;
+float: left;
+width: 600px;
+margin-top: 110px;
+font-size: 21px;
+color: white;
+line-height: 25px;
+height: 470px;
+padding-left: 15px;
+}
+
+#tresc2 p
+{
+padding: 0px;
+margin-top: 0px;
+margin-bottom: 5px;
+}
+
+#strona3
+{
+display: block;
+float: left;
+width: 100%;
+height: 100vh;
+background-image: url(https://cdn.pixabay.com/photo/2012/04/26/12/50/house-42391_960_720.png);
+background-position: center;
+background-size: cover;
+}
+
+#projekty
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+height: 85%;
+width: 92%;
+}
+
+.projekty_box
+{
+display: block;
+float: left;
+margin-top: 40px;
+padding: 0px;
+height: 500px;
+width: 270px;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 20px; /*zaokr¹glenie o promieniu 20px*/
+color: white;
+position: relative; /*pozycja relative umo¿liwia w divie zagnie¿d¿onym (button) dostosowaæ pozycjê wzglêdem diva nadrzêdnego*/
+background-image: url(https://cdn.pixabay.com/photo/2017/06/26/20/36/palm-2445107_960_720.jpg);
+background-position: center;
+background-size: cover;
+opacity: 0.95;
+box-shadow: 2px 2px 15px black;     /*selektor { box-shadow: poziom pion rozmycie rozprzestrzenienie kolor,... }*/
+}
+
+.projekty_box:hover
+{
+box-shadow: 2px 2px 15px #FAF214;
+}
+
+.projekty_box h2, p
+{
+margin-left: 10px;
+margin-right: 10px;
+text-align: justify;
+}
+
+.projekty_box h2
+{
+font-family: 'Roboto', sans-serif; 
+letter-spacing: 1px;
+}
+
+.projekty_box p
+{
+font-size: 17.5px;
+font-family: Lato;
+font-weight: 400;
+}
+
+.button
+{
+display: block;
+height: 20px;
+left: 0px;
+position: absolute;
+bottom: 10px;
+}
+
+.button p
+{
+display: block;
+float: left;
+width: 135px;
+padding: 0;
+margin: 0;
+text-align: center;
+font-style: italic;
+}
+
+#strona4
+{
+display: block;
+float: left;
+width: 100%;
+height: 100vh;
+background-image: url(https://cdn.pixabay.com/photo/2017/08/20/17/31/chocolate-2662512_960_720.jpg);
+background-position: center;
+background-size: cover;
+opacity: 0.96;
+}
+
+#tresc4
+{
+display: block;
+float: left;
+width: 50%;
+height: 400px;
+margin-top: 80px;
+margin-left: 15px;
+
+padding-top: 0px;
+padding-right: 20px;
+color: white;
+text-align: justify;
+font-family: Lato;
+font-size: 20px;
+line-height: 32px;
+}
+
+#informacje
+{
+display: block;
+float: left;
+width: 615px;
+height: 305px;
+color: white;
+margin-top: 110px;
+font-size: 18px;
+margin-left: 20px;
+border-left: 1.3px solid red;
+}
+
+footer
+{
+display: block;
+float: left;
+text-align: center;
+color: white;
+background-color: black;
+height: 20px;
+width: 100%;
+padding-top: 6px;
+border-top: 1.2px solid white;
+font-family: Helvetica;
+font-size: 14.5px;
+}
+
+.tabela
+{
+padding: 10px;
+line-height: 35px;
+}
+
+.sticky
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;  /*jesli jest wartosc 1 to wtedy menu zakrywa pozostale elementy i jest zawsze widoczne (na pierwszym planie)*/
+}
+
+
+
+
+
+
+
+

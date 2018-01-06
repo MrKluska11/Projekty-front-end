@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8"/>
+<title>Portfolio</title>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="fontello-bb45a3a3/css/fontello.css" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Ubuntu" rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+    
+    <script>
+        
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 0)
+                {
+                    $("nav").addClass("sticky").css("background", "blue");
+                }
+            else
+                {
+                    $("nav").removeClass("sticky").css("background", "none");
+                }
+        });
+    
+    </script>
+
+</head>
+
+<body>
+
+<header>
+<nav>
+<div id="logo">
+<div id="ikona">
+<i class="icon-home-2"></i>
+</div>
+<div id="napis">
+<p>Portfolio</p>
+</div>
+</div>
+
+<div style="clear: booth;"></div>
+
+<div id="menu">
+
+<div id="ikona-git">
+<a href="https://github.com/MrKluska11" target="_blank"><i class="icon-github-circled"></i></a>
+</div>
+
+<div id="lista">
+<ul>
+<li><a href="#strona4">Kontakt & O mnie</a></li>
+<li><a href="#strona3">Projekty</a></li>
+<li><a href="#strona2">Umiejętności</a></li>
+</ul>
+</div>
+</div>
+
+</nav>
+
+<div id="opis1">
+<div id="naglowek1">
+<h2>Kamil Kluska</h2>
+<p>Junior Developer</p>
+</div>
+
+<div id="tresc1">
+<p>Technologiami webowymi interesuję już od dłuższego czasu. Codziennie pogłębiam zdobytą dotychczas wiedzę i poznaje nowe technologie.</p>
+<p><b>Aktualnie poszukuję swojej pierwszej pracy/stażu w Łodzi</b></p>
+</div>
+</div>
+
+<div id="strzalka">
+<a href="#strona2"><i class="icon-down-circled"></i></a>
+</div>
+
+</header>
+
+<article>
+<div id="strona2">
+
+<div class="naglowek">
+<h2>Umiejętności</h2>
+</div>
+
+<div id="image1">
+
+</div>
+
+<div id="opis2">
+<p>Języki programowania</p><br/>
+<p>Bazy danych</p><br/>
+<p>Frameworki</p><br/><br/>
+<p>Narzędzia</p>  <br/>
+<p>Microsoft Office</p> <br/>
+<p>Pozostałe</p>
+</div>
+
+<div style="clear: booth"></div>
+
+<div id="tresc2">
+<p>HTML, CSS, SQL, T-SQL, C#, R, Matlab</p><br/>
+<p>phpMyAdmin, SQL Server 2012, Entity Framework</p><br/>
+<p>ASP.NET Web Forms, ASP.NET MVC, Windows Forms Application</p><br/>
+<p>Git, Notepad++, Brackets, LINQPad</p><br/>
+<p>Excel, Acces, Word</p><br/>
+<p>jQuery, AJAX, LINQ</p><br/>
+</div>
+
+<div style="clear: booth;"></div>
+
+<div id="image2">
+
+</div>
+
+</div>
+
+<div style="clear: booth;"></div>
+
+<div id="strona3">
+
+<div class="naglowek">
+<h2>Projekty</h2>
+</div>
+
+<div id="projekty">
+<div class="projekty_box" id="projekty_box1">
+<img src="images/strona_statyczna.jpg" style="width: 270px; border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom: 1.3px solid black;"/>
+<h2>Portfolio</h2>
+<p>Statyczna strona napisana bez frameworków, czysty HTML, CSS oraz jQuery. Formularz wysyłany za pomocą ASP.NET MVC, walidacja po stronie klienta jak i serwera.
+
+<div class="button" id="button1">
+<p><b>Live<b></p>
+<p><b>GitHub</b></p>
+</div>
+
+</div>
+
+<div class="projekty_box" id="projekty_box2">
+<img src="images/ksiazka_telefoniczna.jpg" style="width: 270px; border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom: 1.3px solid black;"/>
+
+<h2>Lista Kontaktów</h2>
+
+<p>Aplikacja umożliwiająca tworzenie listy kontaktów poprzez wpisywanie danych do formularza, a także zapisywanie danych w notatniku oraz sortowanie jej elementów. Całość została stworzona w Windows Forms Application.</p>
+
+<div class="button">
+<p><b>Live</b></p>
+<p><b>GitHub</b></p>
+</div>
+</div>
+
+<div class="projekty_box" id="projekty_box3">
+
+<img src="images/sklep_internetowy.jpg" style="width: 270px; border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom: 1.3px solid black;"/>
+
+<h2>Sklep internetowy</h2>
+
+<p>Sklep internetowy stworzony w technologii ASP.NET MVC. Aplikacje zawiera wiele różnych użyteczności m.i: obsługa koszyka, dynamiczne wyświetlanie danych z bazy, logowanie/rejestracja.</p>
+
+<div class="button">
+<p><b>Live</b></p>
+<p><b>GitHub</b></p>
+</div>
+
+</div>
+
+<div class="projekty_box" id="projekty_box4">
+
+<img src="images/edytor_textowy.jpg" style="width: 270px; border-top-right-radius: 20px; border-top-left-radius: 20px; border-bottom: 1.3px solid black;"/>
+
+<h2>Edytor tekstowy</h2>
+
+<p>Edytor tekstowy stworzony w całości w Windows Forms Application umożliwijący m.i: kopiowanie, wycinanie zaznaczonego tekstu, zapisywanie, wczytywanie z plików tekstowych, zmianę koloru tła lub czcionki.</p>
+
+<div class="button">
+<p><b>Live</b></p>
+<p><b>Github</b></p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="strona4">
+
+<div class="naglowek">
+<h2>Kontakt & O mnie</h2>
+</div>
+
+<div id="tresc4">
+<p>Aktualnie jestem absolwentem Uniwersytetu Łódzkiego kierunku analityka gospodarcza II stopnia, mieszkam w Łodzi i jestem otwarty na wszystkie propozycje które pozwolą mi się rozwijać w kierunku aplikacji webowych lub desktopowych tworzonych w języku C#. Każdego dnia poszerzam swoją wiedzę i praktyczne umiejętności z zakresu programowania. Najlepiej mi znane technologie to głównie: Windows Forms Application oraz ASP.NET MVC.  Na temat moich umiejętności chętnie porozmawiam na spotkaniu rekrutacyjnym. Jeśli zainteresowało Cię moje porfolio  i chcesz się ze mną skontaktować lub masz dodatkowe pytania napisz na kamil13@poczta.onet.eu lub zadzwoń na wskazany obok numer.</p>
+</div>
+
+<div id="informacje">
+<table class="tabela">
+<tr>
+<td style="width: 45px;"><i class="icon-user"></i></td>
+<td>Data urodzenia: </td>
+<td>15-10-1992</td>
+</tr>
+<tr>
+<td><i class="icon-home-1"></i></td>
+<td style="width: 185px;">Miejsce zamieszkania: </td>
+<td>Łódź</td>
+</tr>
+<tr>
+<td><i class="icon-graduation-cap-1"></i></td>
+<td>Wykształcenie: </td>
+<td>magisterskie</td>
+</tr>
+<tr>
+<td><i class="icon-mail-alt"></i></td>
+<td>E-mail: </td>
+<td>kamil13@poczta.onet.eu</td>
+</tr>
+<tr>
+<td><i class="icon-phone"></i></td>
+<td>Telefon: </td>
+<td>664316177</td>
+</tr>
+<tr>
+<td><i class="icon-gamepad"></i></td>
+<td>Zainteresowania: </td>
+<td>Polityka, rynek finansowy, szachy, gry komp.</td>
+</tr>
+<tr>
+<td><i class="icon-git"></i></td>
+<td>GitHub: </td>
+<td>https://github.com/MrKluska11</td>
+</tr>
+</table>
+</div>
+</div>
+</article>
+
+<footer>
+&copy; Kamil Kluska - Web Develper 2017
+</footer>
+
+<script src="jquery-3.2.1.min.js"/>
+
+
+</body>
+
+</html>

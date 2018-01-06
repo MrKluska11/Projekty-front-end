@@ -1,0 +1,5 @@
+w fontello plik demo.html na samym dole przekopiuj tag "i"
+potem usun demo-icon i napis pomiedzy tagami <i> ... </i>
+jeœli chcesz zmieniæ rozmiar ikonu wejdz w fontello.css i na samym dole dopisz: font-size: 20px; oraz np. margin-top: ...px
+
+fontawesome.io/icon
